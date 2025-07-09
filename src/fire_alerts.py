@@ -1,5 +1,6 @@
 import pandas as pd
-import folium
+#import folium
+import pydeck as pdk
 from datetime import datetime
 import streamlit as st
 
@@ -13,17 +14,13 @@ def load_firms_data():
     df = df.rename(columns={"latitude": "lat", "longitude": "lon"})
     return df
 
-def build_fire_map(df):
-    m = m = folium.Map(location=[56, -106], zoom_start=4, tiles="OpenStreetMap")
-
-    for _, row in df.iterrows():
-        folium.CircleMarker(
-            location=[row["lat"], row["lon"]],
-            radius=4,
-            popup=f"🔥 {row['acq_date']}, Brightness: {row['brightness']}",
-            color="red",
-            fill=True,
-            fill_opacity=0.7
-        ).add_to(m)
-
-    return m._repr_html_()  # returns raw HTML for Streamlit
+def build_fire_layer(df):
+    return pdk.Layer(
+        "ScatterplotLayer",
+        data=df,
+        get_position='[lon, lat]',
+        get_radius=3000,
+        get_fill_color='[255, 0, 0, 140]',
+        pickable=True,
+        tooltip=True
+    )
