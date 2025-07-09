@@ -1,4 +1,4 @@
-# Polar Sentinel
+# NorthWatch
 
 An open-source ISR (Intelligence, Surveillance, Reconnaissance) dashboard that fuses thermal satellite alerts, optical imagery, and weather data to generate Arctic and wildfire risk insights.
 
