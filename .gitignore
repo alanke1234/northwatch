@@ -1,0 +1,7 @@
+# Ignore data files, secrets, and system files
+*.csv
+*.json
+*.ipynb_checkpoints/
+__pycache__/
+.env
+
