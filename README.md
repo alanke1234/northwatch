@@ -10,5 +10,5 @@ An open-source ISR (Intelligence, Surveillance, Reconnaissance) dashboard that f
 
 ---
 
-### Status: 🚧 MVP in progress — Day 1
+### Status: Fused VIIRS & MODIS (FIRMS) data & incorporated a filter to enable users to view hotspots based on desired characteristics. 
 
